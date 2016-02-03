@@ -1,0 +1,330 @@
+\document
+[
+  Info
+  {
+    Author = "<%Author%>"
+    Keywords = "<%resource(MyDocumentKeywords)%>"
+  }
+]
+{
+  \styles
+  {
+    Normal
+    {
+      Font
+      {
+        Name = "Verdana"
+        Size = 10
+      }
+      ParagraphFormat
+      {
+        LineSpacingRule = Multiple
+        LineSpacing = 1.3
+      }
+    }
+    
+    Image : Normal
+    {
+      ParagraphFormat
+      {
+        LineSpacingRule = Single
+      }
+    }
+    
+    NormalBold : Normal
+    {
+      Font
+      {
+        Bold = true
+      }
+    }
+    
+    Footer : Normal
+    {
+      Font
+      {
+        Name = "Times New Roman"
+        Size = 8
+        Bold = false
+      }
+    }
+  }
+  \section
+  [
+    PageSetup
+    {
+      PageFormat = A4
+      LeftMargin = "2cm"
+      RightMargin = "2cm"
+      TopMargin = "1cm"
+      BottomMargin = "1cm"
+      FooterDistance = "1.25cm"
+      HeaderDistance = "1.25cm"
+    }
+  ]
+  {
+    \primaryheader
+    [
+      Format
+      {
+        Font
+        {
+          Name = "Times New Roman"
+          Size = 8
+          Color = Black
+        }
+        Alignment = Left
+        LeftIndent = 0
+        SpaceAfter = 0
+        LineSpacingRule = Multiple
+        LineSpacing = 1.3
+      }
+    ]
+    {
+      \paragraph
+      [
+        Style = "Footer"
+        Format
+        {
+        }
+      ]
+      {
+        
+      }
+    }
+    \paragraph
+    [
+      Style = "Image"
+      Format
+      {
+        Alignment = Center
+        SpaceBefore = "0.2cm"
+      }
+    ]
+    {
+      \image("")
+      [
+        LockAspectRatio = true
+        Name = "<%resource(ImageLogo)%>"
+      ]
+    }
+    \paragraph
+    [
+      Style = "NormalBold"
+      Format
+      {
+        Alignment = Center
+      }
+    ]
+    {
+      <%resource(Title)%>
+    }
+    \paragraph
+    [
+      Style = "Normal"
+      Format
+      {
+        Alignment = Left
+      }
+    ]
+    {
+      \field(Date)[Format = "dd/MM/yyyy HH:mm:ss"]
+    }
+    \paragraph
+    [
+      Style = "Normal"
+    ]
+    {
+      <%resource(Text1)%> : <%Object.Value1%>
+    }
+    \paragraph
+    [
+      Style = "Normal"
+    ]
+    {
+      <%resource(Text2)%> : <%Object.Value2%>
+    }
+    \paragraph
+    [
+      Style = "NormalBold"
+      Format
+      {
+        Alignment = Center
+        SpaceBefore = "0.3cm"
+      }
+    ]
+    {
+      <%resource(labelListOfItems)%>
+    }
+    \table
+    [
+      Comment = "<%List{0}%>"
+      Format
+      {
+        LeftIndent = "0.5cm"
+      }
+      Borders
+      {
+        Style = None
+        Width = 0
+      }
+    ]
+    {
+      \columns
+      {
+        \column
+        [
+          Width = "17cm"
+        ]
+      }
+      \rows
+      {
+        \row
+        {
+          \cell
+          [
+            Style = "Normal"
+          ]
+          {
+             NA 
+          }
+        }
+      }
+    }
+    \table
+    [
+      Comment = "<%List{1}%>"
+      Borders
+      {
+        Style = None
+        Width = 0
+      }
+    ]
+    {
+      \columns
+      {
+        \column
+        [
+          Comment = "<%ItemProperty1%>"
+          Width = "12cm"
+        ]
+        \column
+        [
+          Comment = "<%ItemProperty2{C}%>"
+          Width = "5cm"
+          Format
+          {
+            Alignment = Right
+          }
+        ]
+      }
+      \rows
+      {
+        \row
+        [
+          VerticalAlignment = Center
+          Borders
+          {
+            Style = None
+          }
+        ]
+        {
+          \cell
+          [
+            Style = "Normal"
+            Borders
+            {
+              Style = None
+            }
+          ]
+          {
+            <%resource(ItemHeader1)%>
+          }
+          \cell
+          [
+            Style = "Normal"
+            Format
+            {
+              Alignment = Right
+            }
+            Borders
+            {
+              Style = None
+            }
+          ]
+          {        
+            <%resource(ItemHeader2)%>
+          }
+        }
+      }
+    }
+    \paragraph
+    [
+      Comment = "<%IF(<%BooleanValue%>)%>"
+      Style = "NormalBold"
+      Format
+      {
+        Alignment = Center
+        SpaceBefore = "0.3cm"
+      }
+    ]
+    {
+      <%resource(labelConditionalText)%>
+    }
+    \paragraph
+    [
+      Comment = "<%IF(<%BooleanValue%>)%>"
+      Style = "NormalBold"
+      Format
+      {
+        Alignment = Center
+        SpaceBefore = "0.3cm"
+      }
+    ]
+    {
+      <%resource(labelConditionalText2)%> : <%SUM(<%Object.CashAfter%>;-<%Object.Amount%>)\{C\}%>
+    }
+		\paragraph
+		[
+			Comment = "<%template(List2)%>"
+			Style = "NormalBold"
+			Format
+			{
+				Alignment = Center
+				SpaceBefore = "0.3cm"
+				SpaceAfter = "0.5cm"
+			}
+		]
+		{
+			********************
+		}
+		\paragraph
+		[
+			Comment = "<%template(List2)%>"
+			Style = "NormalBold"
+			Format
+			{
+				Alignment = Center
+				SpaceBefore = "0.3cm"
+				SpaceAfter = "0.5cm"
+			}
+		]
+		{
+      <%resource(labelTemplateText1)%> : <%ItemSubItemProperty1%>
+		}
+		\paragraph
+		[
+			Comment = "<%template(List2)%>"
+			Style = "NormalBold"
+			Format
+			{
+				Alignment = Center
+				SpaceBefore = "0.3cm"
+				SpaceAfter = "0.5cm"
+			}
+		]
+		{
+      <%resource(labelTemplateText2)%> : <%ItemSubItemProperty2%>
+		}
+	}
+}
